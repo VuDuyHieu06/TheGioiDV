@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Động Vật</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            padding: 30px 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #3498db;
+            padding: 20px 0 10px;
+            border-bottom: 3px solid #3498db;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #e74c3c;
+            padding: 10px 0;
+            margin-top: 15px;
+        }
+
+        div {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        ul li {
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ul li:before {
+            content: "🐾";
+            position: absolute;
+            left: 0;
+        }
+
+        ol li {
+            background: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        ol li:hover {
+            transform: translateX(5px);
+            background: #e3f2fd;
+        }
+
+        strong {
+            color: #e74c3c;
+            font-size: 1.1em;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #e74c3c;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover {
+            color: #ff6b6b;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            main {
+                padding: 10px;
+            }
+            
+            div {
+                padding: 15px;
+            }
+
+            .close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>🦁 Thế Giới Động Vật 🐘</h1>
+        <div>
+            <h2>Giới Thiệu</h2>
+            <p>Thế giới động vật là một vương quốc đa dạng và kỳ diệu với hàng triệu loài sinh vật khác nhau. Từ những sinh vật nhỏ bé như kiến đến những động vật khổng lồ như voi và cá voi, mỗi loài đều có vai trò quan trọng trong hệ sinh thái của chúng ta.</p>
+        </div>
+        <div>
+            <h2>Thông Tin Thú Vị</h2>
+            <h3>Động Vật Nổi Tiếng Nhất</h3>
+            <ul>
+                <li>Sư Tử - Vua của các loài thú</li>
+                <li>Voi Châu Phi - Động vật trên cạn lớn nhất</li>
+                <li>Cá Voi Xanh - Động vật lớn nhất hành tinh</li>
+                <li>Đại Bàng - Biểu tượng của sức mạnh</li>
+            </ul>
+            <a href="#"><h3>Top 5 Động Vật Nhanh Nhất</h3></a>
+            <ol>
+                <li><strong>Báo Gêpa</strong> - Tốc độ 120 km/h</li>
+                <li>Đại Bàng Vàng - Tốc độ 320 km/h khi lao xuống</li>
+                <li>Linh Dương - Tốc độ 100 km/h</li>
+                <li>Ngựa Vằn - Tốc độ 65 km/h</li>
+                <li>Sư Tử - Tốc độ 80 km/h</li>
+            </ol>
+        </div>
+        <div>
+            <h2>Thư Viện Ảnh</h2>
+            <h3>Động Vật Nổi Tiếng</h3>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=600" alt="Sư Tử - Vua của các loài thú" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600" alt="Voi Châu Phi - Động vật trên cạn lớn nhất" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Cá Voi Xanh - Động vật lớn nhất hành tinh" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=600" alt="Đại Bàng - Biểu tượng của sức mạnh" onclick="openModal(this)">
+            </div>
+            
+            <h3>Động Vật Nhanh Nhất</h3>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=600" alt="Báo Gêpa - Tốc độ 120 km/h" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=600" alt="Đại Bàng Vàng - Tốc độ 320 km/h" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600" alt="Linh Dương - Tốc độ 100 km/h" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=600" alt="Ngựa Vằn - Tốc độ 65 km/h" onclick="openModal(this)">
+                <img src="https://images.unsplash.com/photo-1591924811261-6ad14cbcfa07?w=600" alt="Sư Tử săn mồi - Tốc độ 80 km/h" onclick="openModal(this)">
+            </div>
+        </div>
+    </main>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'block';
+            modalImg.src = img.src.replace('w=600', 'w=1200');
+            modalImg.alt = img.alt;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
